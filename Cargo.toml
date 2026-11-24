@@ -1,0 +1,28 @@
+[package]
+name = "zhs4tra"
+version = "0.1.0"
+edition = "2021"
+authors = ["zhs4tra security"]
+description = "Lightweight OPSEC image metadata stripper & anonymizer CLI for Linux and Windows"
+license = "MIT"
+readme = "README.md"
+
+[[bin]]
+name = "zhs4tra"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1.0"
+clap = { version = "4.5", features = ["derive"] }
+image = { version = "0.25", default-features = false, features = ["jpeg", "png", "webp", "bmp", "tiff"] }
+img-parts = "0.3"
+kamadak-exif = "0.5"
+owo-colors = "4.1"
+rand = "0.8"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
