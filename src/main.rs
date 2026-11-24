@@ -13,11 +13,18 @@ use std::path::{Path, PathBuf};
 use stripper::StripMode;
 
 fn main() {
-    let args = cli::Cli::parse();
+    let raw_args: Vec<String> = std::env::args().collect();
+    let is_quiet = raw_args.iter().any(|a| a == "-q" || a == "--quiet");
+    let is_help_or_version = raw_args
+        .iter()
+        .any(|a| a == "-h" || a == "--help" || a == "-V" || a == "--version");
 
-    if !args.quiet {
+    // Always display the ASCII banner first (even when invoked as bare `zhs4tra` with no args)
+    if !is_quiet && !is_help_or_version {
         cli::print_banner();
     }
+
+    let args = cli::Cli::parse();
 
     if let Err(err) = run(&args) {
         eprintln!("{} {:#}", "[ERROR]".bright_red().bold(), err);

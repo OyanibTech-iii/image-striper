@@ -15,6 +15,15 @@ pub const ASCII_BANNER: &str = r#"
 #[command(
     name = "zhs4tra",
     version = "0.1.0",
+    before_help = concat!(
+        "  ███████╗██╗  ██╗███████╗██╗  ██╗████████╗██████╗  █████╗ \n",
+        "  ╚══███╔╝██║  ██║██╔════╝██║  ██║╚══██╔══╝██╔══██╗██╔══██╗\n",
+        "    ███╔╝ ███████║███████╗███████║   ██║   ██████╔╝███████║\n",
+        "   ███╔╝  ██╔══██║╚════██║╚════██║   ██║   ██╔══██╗██╔══██║\n",
+        "  ███████╗██║  ██║███████║     ██║   ██║   ██║  ██║██║  ██║\n",
+        "  ╚══════╝╚═╝  ╚═╝╚══════╝     ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝\n",
+        "  [ zhs4tra :: Zero-Trace Image Metadata Stripper & Anonymizer ]"
+    ),
     about = "Zero-Trace Image Metadata Stripper & Anonymizer for Linux & Windows",
     long_about = "zhs4tra is a lightweight cybersecurity & anonymity CLI tool that completely strips identifying metadata (EXIF, GPS, XMP, IPTC, ICC profiles, comments, thumbnails) from images."
 )]
