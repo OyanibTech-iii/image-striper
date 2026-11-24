@@ -13,11 +13,11 @@ path = "src/main.rs"
 
 [dependencies]
 anyhow = "1.0"
-clap = { version = "4.5", features = ["derive"] }
-image = { version = "0.25", default-features = false, features = ["jpeg", "png", "webp", "bmp", "tiff"] }
+clap = { version = "=4.5.4", features = ["derive"] }
+image = { version = "=0.24.9", default-features = false, features = ["jpeg", "png", "webp", "bmp", "tiff"] }
 img-parts = "0.3"
 kamadak-exif = "0.5"
-owo-colors = "4.1"
+owo-colors = "4.0"
 rand = "0.8"
 
 [profile.release]

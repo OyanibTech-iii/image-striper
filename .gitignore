@@ -1,3 +1,7 @@
 /target
 **/*.rs.bk
 *.pdb
+*.exe
+test_plant*.png
+Cargo.lock
+
